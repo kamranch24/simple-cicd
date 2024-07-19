@@ -6,9 +6,11 @@ data "aws_vpc" "existing" {
 }
 
 # Example: Fetching existing subnets
-data "aws_subnets" "existing" {
-  vpc_id = data.aws_vpc.existing.id
+# Data source to reference an existing subnet
+data "aws_subnet" "existing_subnet" {
+  id = "subnet-0bc0270efdbd510c5"  # Replace with your existing subnet ID
 }
+
 
 # Example: Use existing VPC's subnets for your EKS cluster
 resource "aws_eks_cluster" "eks" {
