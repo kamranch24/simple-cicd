@@ -12,12 +12,3 @@ data "aws_subnet" "existing_subnet" {
 }
 
 
-# Example: Use existing VPC's subnets for your EKS cluster
-resource "aws_eks_cluster" "eks" {
-  name     = "my-cluster"
-  role_arn = aws_iam_role.eks.arn
-
-  vpc_config {
-    subnet_ids = data.aws_subnets.existing.ids
-  }
-}
