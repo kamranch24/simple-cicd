@@ -42,7 +42,6 @@ jobs:
       - name: Terraform Init
         run: terraform init
       - name: Terraform Import
-      - name: Terraform Import
         run: |
           terraform import aws_iam_role.eks_cluster eks-cluster-role
           terraform import aws_iam_role.node eks-node-group-role
