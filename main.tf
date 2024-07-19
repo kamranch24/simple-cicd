@@ -1,5 +1,3 @@
-# main.tf
-
 provider "aws" {
   region = "us-west-2"
 }
@@ -79,4 +77,3 @@ resource "aws_iam_role_policy_attachment" "node-ecr" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
   role       = aws_iam_role.node.name
 }
-
