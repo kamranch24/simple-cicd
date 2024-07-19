@@ -41,6 +41,10 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+      - name: Terraform Import
+        run: |
+          terraform import aws_iam_role.eks_cluster arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/eks-cluster-role
+          terraform import aws_iam_role.node arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/eks-node-group-role
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
