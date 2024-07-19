@@ -2,7 +2,7 @@
 
 # Data source to reference an existing VPC
 data "aws_vpc" "existing" {
-  id = "vpc-12345678"  # Replace with your existing VPC ID
+  id = "vpc-0d6cf5d879b144cab"  # Replace with your existing VPC ID
 }
 
 # Example: Fetching existing subnets
